@@ -1,72 +1,57 @@
 <template>
-  <div v-if="currentCreamer.name !== 'No Cream'" class="froth" :style="{ backgroundColor: currentCreamer.color }">
-    <div v-for="n in 5" :key="n" class="foam" :style="{ backgroundColor: getFoamColor() }"></div>
+  <div class="froth">
+    <div v-for=" in 5" class="foam"></div>
   </div>
 </template>
 
-<script setup lang="ts">
-import { currentCreamer } from "../stores/beverage";
-
-const getFoamColor = () => {
-  // Make foam bubbles slightly lighter/whiter than the base creamer color
-  if (currentCreamer.value.name === 'Milk') return '#F0F8FF';
-  if (currentCreamer.value.name === 'Cream') return '#FFFEF0';
-  if (currentCreamer.value.name === 'Half & Half') return '#FFFFF0';
-  return '#e4e0d2';
-};
-</script>
-
+<script setup lang="ts"></script>
 <style lang="scss" scoped>
 .froth {
   overflow: visible;
+  transform: translateY(400%);
   position: relative;
-  flex: 1;
-  min-height: 35px;
+  height: 20%;
   width: 100%;
+  background-color: #c6c6c6;
+  animation: pour-tea 2s 2s forwards;
 }
-
 .foam {
   display: block;
-  border-radius: 50%;
-  height: 35px;
-  width: 35px;
+  background: #e4e0d2;
+  border-radius: 30px;
+  height: 40px;
+  width: 40px;
   position: absolute;
-  opacity: 0.95;
-  top: -5px;
 }
 
 .foam:nth-child(1) {
-  top: -8px;
-  left: 5px;
-  width: 38px;
-  height: 38px;
+  top: 0px;
+  left: -3px;
 }
 
 .foam:nth-child(2) {
-  top: -6px;
-  left: 35px;
-  width: 32px;
-  height: 32px;
+  top: 0px;
+  left: 55px;
 }
 
 .foam:nth-child(3) {
-  width: 36px;
-  height: 36px;
-  top: -7px;
-  left: 60px;
+  width: 30px;
+  height: 30px;
+  border-radius: 40px;
+  top: 3px;
+  left: 30px;
 }
 
 .foam:nth-child(4) {
   width: 30px;
   height: 30px;
-  top: -5px;
-  right: 35px;
+  border-radius: 45px;
+  top: 5px;
+  right: -2px;
 }
 
 .foam:nth-child(5) {
-  top: -8px;
-  right: 8px;
-  width: 37px;
-  height: 37px;
+  top: 2px;
+  right: 10px;
 }
 </style>

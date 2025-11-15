@@ -23,7 +23,6 @@ import Base from "./Base.vue";
 import Creamer from "./Creamer.vue";
 import Hot from "./Hot.vue";
 import Cold from "./Cold.vue";
-
 type Props = {
   isIced: boolean;
 };

@@ -1,14 +1,17 @@
 <template>
-  <div class="base" :style="{ backgroundColor: currentBase.color }"></div>
+  <div class="baseBeverage"></div>
 </template>
 
-<script setup lang="ts">
-import { currentBase } from "../stores/beverage";
-</script>
+<script setup lang="ts"></script>
 
-<style lang="scss" scoped>
-.base {
+<style scoped>
+.baseBeverage {
+  position: relative;
   width: 100%;
   height: 100%;
+  bottom: 0;
+  animation: pour-tea 2s;
+  z-index: 300;
+  /* // border-radius: 0.05em 0.05em 2.2em 2.2em; */
 }
 </style>
